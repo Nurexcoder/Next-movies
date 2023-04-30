@@ -1,0 +1,55 @@
+.container {
+  width: 1200px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  /* padding: 0 20px; */
+}
+.first {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  /* justify-content: space-between; */
+}
+.logoName {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: white;
+}
+.last {
+  display: flex;
+  align-items: center;
+  /* width: 300px; */
+}
+.searchInput {
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 10px 12px;
+  width: 250px;
+  height: 20px;
+  background-color: transparent;
+  outline: none;
+}
+.searchIconContainer {
+    border: 2px solid #d1d5db;
+    border-radius: 6px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 12px;
+    height: 20px;
+    color: white;
+  /* width: 250px; */
+}
+.searchIcon{
+    color: white;
+}
