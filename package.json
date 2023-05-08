@@ -9,12 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.12.3",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.2",
     "next": "13.3.2",
+    "node-json-db": "^2.2.0",
     "react": "18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "swiper": "^9.2.4"
+    "react-multi-carousel": "^2.8.3",
+    "swiper": "^9.2.4",
+    "swr": "^2.1.5"
   }
 }

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.css";
 import Navbar from "./Navbar";
 import { FaImdb } from "react-icons/fa";
 import { SiRottentomatoes } from "react-icons/si";
+import { BiUpvote } from "react-icons/bi";
+import { FcLike } from "react-icons/fc";
 import { AiFillPlayCircle } from "react-icons/ai";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,68 +15,67 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper";
 const Home = ({ movies }) => {
   const [activeImage, setActiveImage] = useState("/images/poster.jpg");
-
+  const [selectedItem, setSelectedItem] = useState(0);
   const refs = movies.reduce((acc, value) => {
-    acc[value.id] = React.createRef();
+    acc[value.id] = React.useRef();
     return acc;
   }, {});
 
   const handleClick = (item) => {
-    if (item?.primaryImage?.url) {
-      setActiveImage(
-        "https://m.media-amazon.com/images/M/MV5BZmVhZWVmMWMtYmIzYi00MmZjLWJjOTYtNzYwMzExOTY0NmYxXkEyXkFqcGdeQXVyMTMwMjA3Njc1._V1_.jpg"
-      );
+    console.log(item);
+    if (item?.poster_path) {
+      setActiveImage(item.poster_path);
     } else {
       setActiveImage("/images/poster.jpg");
     }
     // setActiveImage();
-    return refs[item.id].current.scrollIntoView({
+    return refs[item.id]?.current?.scrollIntoView({
       behavior: "smooth",
       block: "start",
+      
     });
   };
+  // useEffect(() => {
+  //   let counter = 0;
+    
+  // }, []);
+
   console.log(activeImage);
 
   return (
     <div className={styles.container}>
       <Navbar />
       <div className={styles.imageContainer}>
-        <Image src={activeImage} fill />
+        <Image src={activeImage} alt={activeImage} fill />
       </div>
       <div className={styles.body}>
         {/* <Swiper pagination={true} modules={[Pagination]} className="mySwiper"> */}
         {movies.map((item) => (
           <div className={styles.movieBody} key={item.id} ref={refs[item.id]}>
             <div className={styles.infoContainer}>
-              <h2 className={styles.title}>John Wick 3 : Parabellum</h2>
+              <h2 className={styles.title}>{item.original_title}</h2>
               <div className={styles.review}>
                 <div className={styles.imdb}>
-                  <FaImdb
+                  <BiUpvote
                     color="yellow"
                     fontSize="2rem"
                     className={styles.imdbIcon}
                   />
-                  86.0/100
+                  {item.popularity}
                 </div>
                 <div className={styles.imdb}>
-                  <SiRottentomatoes
+                  <FcLike
                     color="red"
                     fontSize="2rem"
                     className={styles.imdbIcon}
                   />
-                  97%
+                  {item.vote_average}
                 </div>
               </div>
-              <p className={styles.desc}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit
-                officia eaque ex ipsum, rem quidem consequuntur illo optio quam,
-                repellendus libero facilis voluptatibus officiis. Quaerat
-                consequatur blanditiis saepe. Provident saepe repudiandae
-                repellat.
-              </p>
+              <p className={styles.desc}>{item.overview}</p>
               <button
                 className={styles.watch}
-                onClick={() => handleClick(item)}
+                onClick={() => window.location.href='https://www.youtube.com/watch?v=qEVUtrk8_B4'}
               >
                 <AiFillPlayCircle
                   fontSize="1.3rem"
@@ -87,6 +88,7 @@ const Home = ({ movies }) => {
             </div>
           </div>
         ))}
+
         {/* </Swiper> */}
       </div>
     </div>

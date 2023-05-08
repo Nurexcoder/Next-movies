@@ -1,0 +1,127 @@
+.containerInside {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-evenly;
+  background-image: linear-gradient(
+    to right,
+    rgba(31.5, 10.5, 94.5, 1) calc((50vw - 170px) - 340px),
+    rgba(31.5, 10.5, 94.5, 0.84) 50%,
+    rgba(31.5, 10.5, 94.5, 0.84) 100%
+  );
+}
+.container {
+  /* width: 100%; */
+  height: calc(100vh - 100px);
+  display: flex;
+  justify-content: space-evenly;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: left 13vw top;
+}
+.left {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  border-radius: 15px;
+}
+.right {
+  flex: 2;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(1px); */
+  /* background-color: ; */
+}
+.titleBox {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+
+  /* justify-content: center; */
+}
+.title {
+  font-family: "DM Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+  width: 80%;
+}
+.year {
+  font-family: "DM Sans", sans-serif !important;
+  font-style: normal;
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.generalDetails{
+    display: flex;
+    align-items: center;
+}
+.productionCom{
+    margin:0 5px;
+}
+.runTime{
+    margin:0 5px;
+}
+.genre{
+    
+    margin:0 5px;
+}
+.userBar{
+    display: flex;
+    /* width: 50%; */
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 10px 0;
+}
+.popularityDiv {
+    /* width: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* position: absolute;
+    top: 67%; */
+}
+.progress{
+    width: 45px;
+}
+.userScore{
+    margin-left: 10px;
+}
+.play{
+    all: unset;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+.play:hover{
+    color: rgba(255,255,255,0.6);
+    
+}
+.movieOverView{
+    width: 60%;
+}
+.overview{
+    font-family: "DM Sans", sans-serif !important;
+    margin: 10px 0;
+}
+.details{
+    font-family: "DM Sans", sans-serif !important;
+    
+}
+.loading{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -5,7 +5,7 @@ module.exports = {
   images: {
 	// here you can add the url's that you are planning 
    // to use inside your next/image.
-    domains: ["m.media-amazon.com"],
+    domains: ["image.tmdb.org","www.themoviedb.org"],
   },
 };
 

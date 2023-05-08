@@ -1,0 +1,40 @@
+.card {
+  height: 450px;
+  width: 90%;
+  position: relative;
+  /* background-color: red; */
+}
+.imageContainer {
+  width: 100%;
+  height: 70%;
+  position: relative;
+  margin-bottom: 30px;
+}
+.img {
+  border-radius: 15px;
+}
+.movieDetails {
+  /* height: 100px; */
+}
+.popularityDiv {
+  width: 40px;
+  position: absolute;
+  top: 67%;
+}
+.title {
+  font-size: 1rem;
+  margin-top: 40px ;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 900;
+  width: 80%;
+}
+.releaseDate{
+    font-size: 0.9rem;
+    margin-top: 10px ;
+    font-family: "DM Sans";
+    font-style: normal;
+    font-weight: 300;
+    /* width: 80%; */
+
+}
