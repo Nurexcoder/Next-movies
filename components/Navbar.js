@@ -10,7 +10,7 @@ const Navbar = ({ bgColor }) => {
         style={{
           backgroundColor: bgColor ? "rgba(3,37,65,1)" : "transparent",
           width: bgColor ? "100%" : "1200px",
-          position: bgColor ? "relative" : "absolute",
+          position: bgColor ? "relative" : "relative",
         }}
         className={styles.container}
       >

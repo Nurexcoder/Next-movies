@@ -13,32 +13,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import Carousel from "react-multi-carousel";
+
+import "react-multi-carousel/lib/styles.css";
+import Card from "./Card";
+
+
 const Home = ({ movies }) => {
   const [activeImage, setActiveImage] = useState("/images/poster.jpg");
   const [selectedItem, setSelectedItem] = useState(0);
-  const refs = movies.reduce((acc, value) => {
-    acc[value.id] = React.useRef();
-    return acc;
-  }, {});
-
-  const handleClick = (item) => {
-    console.log(item);
-    if (item?.poster_path) {
-      setActiveImage(item.poster_path);
-    } else {
-      setActiveImage("/images/poster.jpg");
-    }
-    // setActiveImage();
-    return refs[item.id]?.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      
-    });
-  };
-  // useEffect(() => {
-  //   let counter = 0;
-    
-  // }, []);
 
   console.log(activeImage);
 
@@ -49,48 +32,103 @@ const Home = ({ movies }) => {
         <Image src={activeImage} alt={activeImage} fill />
       </div>
       <div className={styles.body}>
-        {/* <Swiper pagination={true} modules={[Pagination]} className="mySwiper"> */}
-        {movies.map((item) => (
-          <div className={styles.movieBody} key={item.id} ref={refs[item.id]}>
-            <div className={styles.infoContainer}>
-              <h2 className={styles.title}>{item.original_title}</h2>
-              <div className={styles.review}>
-                <div className={styles.imdb}>
-                  <BiUpvote
-                    color="yellow"
-                    fontSize="2rem"
-                    className={styles.imdbIcon}
-                  />
-                  {item.popularity}
-                </div>
-                <div className={styles.imdb}>
-                  <FcLike
-                    color="red"
-                    fontSize="2rem"
-                    className={styles.imdbIcon}
-                  />
-                  {item.vote_average}
-                </div>
+    <Carousel
+      additionalTransfrom={0}
+      arrows
+      autoPlaySpeed={300}
+      centerMode={false}
+      className={styles.sliderContainer}
+      containerClass="container-with-dots"
+      dotListClass=""
+      draggable
+      focusOnSelect={false}
+      infinite
+      itemClass=""
+      keyBoardControl
+      minimumTouchDrag={80}
+      pauseOnHover
+      renderArrowsWhenDisabled={true}
+      renderButtonGroupOutside={true}
+      renderDotsOutside={true}
+      afterChange={(previousSlide, { currentSlide, onMove })=>console.log(currentSlide/2)}
+      responsive={{
+        desktop: {
+          breakpoint: {
+            max: 3000,
+            min: 1024,
+          },
+          items: 1,
+          partialVisibilityGutter: 40,
+        },
+        mobile: {
+          breakpoint: {
+            max: 464,
+            min: 0,
+          },
+          items: 1,
+          partialVisibilityGutter: 30,
+        },
+        tablet: {
+          breakpoint: {
+            max: 1024,
+            min: 464,
+          },
+          items: 1,
+          partialVisibilityGutter: 30,
+        },
+      }}
+      rewind={false}
+      rewindWithAnimation={false}
+      rtl={false}
+      shouldResetAutoplay
+      showDots={false}
+      // sliderClass=""
+      slidesToSlide={1}
+      swipeable
+    >
+      {movies?.map((item) => (
+        <div className={styles.movieBody} key={item.id}>
+          <div className={styles.infoContainer}>
+            <h2 className={styles.title}>{item.original_title}</h2>
+            <div className={styles.review}>
+              <div className={styles.imdb}>
+                <BiUpvote
+                  color="yellow"
+                  fontSize="2rem"
+                  className={styles.imdbIcon}
+                />
+                {item.popularity}
               </div>
-              <p className={styles.desc}>{item.overview}</p>
-              <button
-                className={styles.watch}
-                onClick={() => window.location.href='https://www.youtube.com/watch?v=qEVUtrk8_B4'}
-              >
-                <AiFillPlayCircle
-                  fontSize="1.3rem"
-                  style={{
-                    marginRight: "5px",
-                  }}
-                />{" "}
-                WATCH TRAILER
-              </button>
+              <div className={styles.imdb}>
+                <FcLike
+                  color="red"
+                  fontSize="2rem"
+                  className={styles.imdbIcon}
+                />
+                {item.vote_average}
+              </div>
             </div>
+            <p className={styles.desc}>{item.overview}</p>
+            <button
+              className={styles.watch}
+              onClick={() =>
+                (window.location.href =
+                  "https://www.youtube.com/watch?v=qEVUtrk8_B4")
+              }
+            >
+              <AiFillPlayCircle
+                fontSize="1.3rem"
+                style={{
+                  marginRight: "5px",
+                }}
+              />{" "}
+              WATCH TRAILER
+            </button>
           </div>
-        ))}
-
-        {/* </Swiper> */}
-      </div>
+        </div>
+      ))}
+    </Carousel>
+  </div>
     </div>
   );
 };
