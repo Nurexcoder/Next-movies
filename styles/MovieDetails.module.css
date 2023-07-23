@@ -1,6 +1,13 @@
+.mainContainer {
+  width: 100%;
+  background-color: rgb(3, 37, 65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .containerInside {
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh);
   display: flex;
   justify-content: space-evenly;
   background-image: linear-gradient(
@@ -10,14 +17,21 @@
     rgba(31.5, 10.5, 94.5, 0.84) 100%
   );
 }
+.body{
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
 .container {
   /* width: 100%; */
-  height: calc(100vh - 100px);
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-position: left 13vw top;
+  background-position: left 13vw top 80px;
 }
 .left {
   position: relative;
@@ -61,65 +75,62 @@
   margin-left: 5px;
 }
 
-.generalDetails{
-    display: flex;
-    align-items: center;
+.generalDetails {
+  display: flex;
+  align-items: center;
 }
-.productionCom{
-    margin:0 5px;
+.productionCom {
+  margin: 0 5px;
 }
-.runTime{
-    margin:0 5px;
+.runTime {
+  margin: 0 5px;
 }
-.genre{
-    
-    margin:0 5px;
+.genre {
+  margin: 0 5px;
 }
-.userBar{
-    display: flex;
-    /* width: 50%; */
-    /* justify-content: space-between; */
-    align-items: center;
-    margin: 10px 0;
+.userBar {
+  display: flex;
+  /* width: 50%; */
+  /* justify-content: space-between; */
+  align-items: center;
+  margin: 10px 0;
 }
 .popularityDiv {
-    /* width: 100px; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* position: absolute;
+  /* width: 100px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: absolute;
     top: 67%; */
 }
-.progress{
-    width: 45px;
+.progress {
+  width: 45px;
 }
-.userScore{
-    margin-left: 10px;
+.userScore {
+  margin-left: 10px;
 }
-.play{
-    all: unset;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    font-weight: 500;
-    cursor: pointer;
+.play {
+  all: unset;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
 }
-.play:hover{
-    color: rgba(255,255,255,0.6);
-    
+.play:hover {
+  color: rgba(255, 255, 255, 0.6);
 }
-.movieOverView{
-    width: 60%;
+.movieOverView {
+  width: 60%;
 }
-.overview{
-    font-family: "DM Sans", sans-serif !important;
-    margin: 10px 0;
+.overview {
+  font-family: "DM Sans", sans-serif !important;
+  margin: 10px 0;
 }
-.details{
-    font-family: "DM Sans", sans-serif !important;
-    
+.details {
+  font-family: "DM Sans", sans-serif !important;
 }
-.loading{
+.loading {
   width: 100%;
   display: flex;
   align-items: center;

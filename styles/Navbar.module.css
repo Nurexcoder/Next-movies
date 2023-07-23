@@ -1,6 +1,6 @@
 .container {
   width: 1200px;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,6 +8,8 @@
   position: absolute;
   top: 0;
   z-index: 1;
+  /* background-color: rgb(3, 37, 65); */
+  margin: 0 auto;
   /* padding: 0 20px; */
 }
 .first {
@@ -38,18 +40,21 @@
   height: 20px;
   background-color: transparent;
   outline: none;
+  color: white;
 }
 .searchIconContainer {
-    border: 2px solid #d1d5db;
-    border-radius: 6px;
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    padding: 10px 12px;
-    height: 20px;
-    color: white;
+  all: unset;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px 12px;
+  height: 20px;
+  color: white;
+  cursor: pointer;
   /* width: 250px; */
 }
-.searchIcon{
-    color: white;
+.searchIcon {
+  color: white;
 }

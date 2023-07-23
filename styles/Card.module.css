@@ -2,8 +2,19 @@
   height: 450px;
   width: 90%;
   position: relative;
+
   /* background-color: red; */
 }
+.searchBox {
+  height: 450px;
+  width: 90%;
+  max-width: 280px;
+  position: relative;
+  background-color: white;
+  border-radius: 15px;
+  margin: 10px 0 ;
+}
+
 .imageContainer {
   width: 100%;
   height: 70%;
@@ -12,9 +23,15 @@
 }
 .img {
   border-radius: 15px;
+  background-color: white;
 }
 .movieDetails {
   /* height: 100px; */
+  margin: 0 5px;
+  width: 100%;
+ 
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .popularityDiv {
   width: 40px;
@@ -23,18 +40,17 @@
 }
 .title {
   font-size: 1rem;
-  margin-top: 40px ;
+  margin-top: 40px;
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 900;
   width: 80%;
 }
-.releaseDate{
-    font-size: 0.9rem;
-    margin-top: 10px ;
-    font-family: "DM Sans";
-    font-style: normal;
-    font-weight: 300;
-    /* width: 80%; */
-
+.releaseDate {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 300;
+  /* width: 80%; */
 }
