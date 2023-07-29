@@ -7,17 +7,18 @@ import Trendings from "@/components/Trendings";
 import Populars from "@/components/Popular";
 import useSWR from "swr";
 
-const HomePage = ({ trendingMovies }) => {
+const HomePage = ({ trendingMovies, token }) => {
   const fetcher = async () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization: "Bearer " + process.env.TOKEN,
+        Authorization: "Bearer " + token,
       },
     };
+    console.log(token);
     const responsePopular = await fetch(
-      "https://api.themoviedb.org/3/tv/airing_today?language=en-US&page=1",
+      "https://api.themoviedb.org/3/tv/airing_today",
       options
     );
 
@@ -88,10 +89,12 @@ export async function getServerSideProps() {
 
   // console.log(response);
   const data = await response.json();
+  const token = process.env.TOKEN;
 
   return {
     props: {
       trendingMovies: data.results,
+      token: token,
       // popularMovies: dataPopular.results.reverse(),
     },
   };
