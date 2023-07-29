@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import styles from "@/styles/search.module.css";
-import { token } from "@/config";
 import Card from "@/components/Card";
 import { useRouter } from "next/router";
 import { Pagination, PaginationItem } from "@mui/material";
@@ -36,7 +35,7 @@ const Search = ({ movies }) => {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + process.env.TOKEN,
       },
     };
 
@@ -105,12 +104,11 @@ export default Search;
 export async function getServerSideProps(context) {
   const query = context.query.q;
   console.log(query);
-  // console.log(token);
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: "Bearer " + token,
+      Authorization: "Bearer " + process.env.TOKEN,
     },
   };
 

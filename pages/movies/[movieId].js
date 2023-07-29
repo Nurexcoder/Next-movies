@@ -4,7 +4,6 @@ import React from "react";
 import styles from "@/styles/MovieDetails.module.css";
 
 const Movie = ({ movie, bgImage }) => {
-  
   console.log(movie);
   return (
     <div className={styles.mainContainer}>
@@ -23,8 +22,7 @@ export async function getServerSideProps(context) {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzNjMDdkYjlhNGQwZGQ0N2QxNjhkNDlhMjgxZGU2NCIsInN1YiI6IjY0NGU1ZGZlYTZjMTA0MTM2NzY3NzEyOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.5uzg775JOdNAjwSFX5p7O97hsR_swBAXshwj_OA5YlY",
+      Authorization: "Bearer " + process.env.TOKEN,
     },
   };
 

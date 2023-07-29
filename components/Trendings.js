@@ -7,7 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { token } from "@/config";
 
 // import "./styles.css";
 const Trendings = ({ trendingMovies }) => {

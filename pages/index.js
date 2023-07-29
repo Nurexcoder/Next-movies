@@ -4,7 +4,6 @@ import React from "react";
 import styles from "../styles/HomePage.module.css";
 import { movies } from "../data";
 import Trendings from "@/components/Trendings";
-import { token } from "@/config";
 import Populars from "@/components/Popular";
 import useSWR from "swr";
 
@@ -14,7 +13,7 @@ const HomePage = ({ trendingMovies }) => {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization: "Bearer " + token,
+        Authorization: "Bearer " + process.env.TOKEN,
       },
     };
     const responsePopular = await fetch(
@@ -74,12 +73,11 @@ export default HomePage;
 // }
 
 export async function getServerSideProps() {
-  // console.log(token);
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization: "Bearer " + token,
+      Authorization: "Bearer " + process.env.TOKEN,
     },
   };
 
